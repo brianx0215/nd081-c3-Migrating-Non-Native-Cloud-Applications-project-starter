@@ -63,9 +63,12 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| *Azure Postgres Database* | Basic |€25.43|
+| *Azure Service Bus*   |Basic| €0.04 |
+| *Azure Blob Storage* | Basic | €0.01 |
+| *Azure Function* | Consumption | €0.01 |
+| *Azure App Services* | F1 | Free |
 
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+In this project, I chose Azure App Service as web server. App Service can offer us a better performance and greater scalability for our server. If the amount of visitor grows exponentially in future, we can easily scale up and scale out out server without any impact. While for the notification server, I chose Azure Functions. Because the notification service is not quite time-sensitive. We don't need to have a dedicated server to push notification all time. By using Azure Function, we can save much budget without losing any availability.
